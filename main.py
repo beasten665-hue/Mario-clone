@@ -1,10 +1,16 @@
 import pygame
+from constants import WIN_W, WIN_H
+from input_handler import handle_event
+from render import draw
+from setup import make_initial_state
+from update import update_game
+
 
 def main():
     pygame.init()
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((WIN_W, WIN_H))
-    pygame.display.set_caption("Tower Combat")
+    pygame.display.set_caption("Enter name here")
 
     state = make_initial_state()
 

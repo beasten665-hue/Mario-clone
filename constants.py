@@ -1,0 +1,2 @@
+#WINDOW
+WIN_H, WIN_W = 600,600
