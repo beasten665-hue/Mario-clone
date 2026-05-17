@@ -1,6 +1,20 @@
 import pygame
-from constants import GROUND_TILE
+from constants import GROUND_TILE, BASE_CLR
 
+
+def draw_player(screen, player):
+    '''
+    This simple function draw the player to the screen
+    :param screen: Screen to be rendered to
+    :param player: Player object to render
+    :return: None
+    '''
+    pygame.draw.rect( screen,
+                                BASE_CLR,
+                     (player.x,
+                                player.y,
+                                player.width,
+                                player.height))
 
 def draw_tiles(screen, game_map):
     '''
@@ -21,4 +35,5 @@ def draw_tiles(screen, game_map):
 def draw(screen, state):
     screen.fill('white')
     draw_tiles(screen, state.game_map)
+    draw_player(screen, state.player)
     pygame.display.flip()

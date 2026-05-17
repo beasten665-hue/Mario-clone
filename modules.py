@@ -1,6 +1,16 @@
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
+class Player:
+    x: int
+    y: int
+    width: int
+    height: int
+    jumping: bool
+    velocity_y: int
+    grounded: bool
+
+@dataclass(frozen=True)
 class GameMap:
     tiles: list[list[int]]
     tile_size: int
@@ -11,3 +21,4 @@ class GameMap:
 class GameState:
     running: bool
     game_map: GameMap
+    player: Player

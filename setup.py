@@ -1,4 +1,5 @@
-from modules import GameState, GameMap
+from constants import WIN_W, WIN_H, PLYR_W, PLYR_H
+from modules import GameState, GameMap, Player
 
 
 def load_level(filename):
@@ -29,7 +30,17 @@ def load_level(filename):
 
 def make_initial_state():
 
-    tiles = load_level('C:\\Users\\user\Desktop\Mario Clone\Levels\level1.txt')
+    tiles = load_level('C:\\Users\\user\\Desktop\\Mario Clone\\Levels\\level1.txt')
+
+    player = Player(
+        x=WIN_W // 2,
+        y=WIN_H // 2,
+        width=PLYR_W,
+        height=PLYR_H,
+        jumping=False,
+        grounded=False,
+        velocity_y=0
+    )
 
     game_map = GameMap(
         tiles = tiles, #Map notepad file
@@ -40,5 +51,6 @@ def make_initial_state():
 
     return GameState(
         running=True,
-        game_map = game_map
+        game_map = game_map,
+        player = player
     )
