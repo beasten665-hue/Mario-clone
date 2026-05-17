@@ -10,7 +10,7 @@ def main():
     pygame.init()
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((WIN_W, WIN_H))
-    pygame.display.set_caption("Enter name here")
+    pygame.display.set_caption("Mario Clone")
 
     state = make_initial_state()
 
