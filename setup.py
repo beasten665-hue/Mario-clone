@@ -52,5 +52,7 @@ def make_initial_state():
     return GameState(
         running=True,
         game_map = game_map,
-        player = player
+        player = player,
+        moving_left=False,
+        moving_right=False,
     )

@@ -22,3 +22,5 @@ class GameState:
     running: bool
     game_map: GameMap
     player: Player
+    moving_left: bool
+    moving_right: bool
