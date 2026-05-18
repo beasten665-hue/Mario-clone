@@ -11,6 +11,12 @@ class Player:
     grounded: bool
 
 @dataclass(frozen=True)
+class Camera:
+    x: int
+    y: int
+    zoom: int
+
+@dataclass(frozen=True)
 class GameMap:
     tiles: list[list[int]]
     tile_size: int
@@ -23,4 +29,5 @@ class GameState:
     moving_left: bool
     moving_right: bool
     jump_pressed: bool
+    camera: Camera
 

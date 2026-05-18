@@ -1,5 +1,5 @@
-from constants import WIN_W, WIN_H, PLYR_W, PLYR_H, TILE_SIZE
-from modules import GameState, GameMap, Player
+from constants import WIN_W, WIN_H, PLYR_W, PLYR_H, TILE_SIZE, ZOOM
+from modules import GameState, GameMap, Player, Camera
 
 
 def load_level(filename):
@@ -33,8 +33,8 @@ def make_initial_state():
     tiles = load_level('C:\\Users\\user\\Desktop\\Mario Clone\\Levels\\level1.txt')
 
     player = Player(
-        x=WIN_W // 2,
-        y=WIN_H // 2,
+        x=0,
+        y=0,
         width=PLYR_W,
         height=PLYR_H,
         jumping=False,
@@ -42,6 +42,12 @@ def make_initial_state():
         velocity_y=0
     )
 
+    camera = Camera(
+        x=player.x,
+        y=player.y,
+        zoom=ZOOM,
+
+    )
     game_map = GameMap(
         tiles = tiles, #Map notepad file
         tile_size = TILE_SIZE,
@@ -50,8 +56,10 @@ def make_initial_state():
     return GameState(
         running=True,
         game_map = game_map,
+        camera = camera,
         player = player,
         moving_left=False,
         moving_right=False,
         jump_pressed=False,
+
     )
