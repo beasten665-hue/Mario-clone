@@ -1,4 +1,4 @@
-from constants import WIN_W, WIN_H, PLYR_W, PLYR_H
+from constants import WIN_W, WIN_H, PLYR_W, PLYR_H, TILE_SIZE
 from modules import GameState, GameMap, Player
 
 
@@ -44,9 +44,7 @@ def make_initial_state():
 
     game_map = GameMap(
         tiles = tiles, #Map notepad file
-        tile_size = 40,
-        width = 20,
-        height= 20,
+        tile_size = TILE_SIZE,
     )
 
     return GameState(
