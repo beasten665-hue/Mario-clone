@@ -24,3 +24,5 @@ class GameState:
     player: Player
     moving_left: bool
     moving_right: bool
+    jump_pressed: bool
+

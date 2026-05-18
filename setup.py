@@ -55,4 +55,5 @@ def make_initial_state():
         player = player,
         moving_left=False,
         moving_right=False,
+        jump_pressed=False,
     )

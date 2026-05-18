@@ -155,3 +155,17 @@ def rect_hits_wall(game_map,rect_x,rect_y,width,height):
         if is_wall(game_map, row, col):
             return True
     return False
+
+def player_is_on_ground(game_map, x, y, width, height):
+    tile_size = game_map.tile_size
+
+    foot_y = y + height
+
+    left_col = int(x) // tile_size
+    right_col = int(x + width - 1) // tile_size
+    row_below = int(foot_y // tile_size)
+
+    return (
+        is_wall(game_map, row_below, left_col) or
+        is_wall(game_map, row_below, right_col)
+    )
